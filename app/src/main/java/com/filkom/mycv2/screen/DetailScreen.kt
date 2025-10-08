@@ -28,10 +28,10 @@ fun detail(onDaftar: () -> Unit) {
                 .fillMaxWidth(),
             textAlign = TextAlign.Center
         )
-        Text(text = "NIM: 22000123", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
-        Text(text = "Nama: Budi Setiawan", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
-        Text(text = "Email: budi@gmail.com", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
-        Text(text = "Alamat: Malang", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
+        Text(text = "NIM: 235150401111036", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
+        Text(text = "Nama: Rafi Cahya Prastawa", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
+        Text(text = "Email: raficahya@student.ub.ac.id", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
+        Text(text = "Alamat: Araya", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
 
         Button(
             modifier = Modifier.align(Alignment.CenterHorizontally),
