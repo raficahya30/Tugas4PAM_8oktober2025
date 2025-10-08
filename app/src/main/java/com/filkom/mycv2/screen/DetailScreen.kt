@@ -15,7 +15,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun detail(onDaftar: () -> Unit) {
+fun detail(
+    nim: String,
+    nama: String,
+    email: String,
+    alamat: String,
+    onDaftar: () -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -28,10 +34,10 @@ fun detail(onDaftar: () -> Unit) {
                 .fillMaxWidth(),
             textAlign = TextAlign.Center
         )
-        Text(text = "NIM: 235150401111036", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
-        Text(text = "Nama: Rafi Cahya Prastawa", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
-        Text(text = "Email: raficahya@student.ub.ac.id", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
-        Text(text = "Alamat: Araya", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
+        Text(text = "NIM: $nim", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
+        Text(text = "Nama: $nama", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
+        Text(text = "Email: $email", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
+        Text(text = "Alamat: $alamat", fontSize = 14.sp, modifier = Modifier.padding(vertical = 10.dp))
 
         Button(
             modifier = Modifier.align(Alignment.CenterHorizontally),
@@ -45,5 +51,11 @@ fun detail(onDaftar: () -> Unit) {
 @Preview
 @Composable
 fun detailPreview() {
-    detail({})
+    detail(
+        nim = "235150401111036",
+        nama = "Rafi Cahya Prastawa",
+        email = "raficahya@student.ub.ac.id",
+        alamat = "Araya",
+        onDaftar = {}
+    )
 }

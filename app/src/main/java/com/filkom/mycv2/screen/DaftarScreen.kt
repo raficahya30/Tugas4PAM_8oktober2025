@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun daftar(onSimpan: () -> Unit) {
+fun daftar(onSimpan: (String, String, String, String) -> Unit) {
     var nim by remember { mutableStateOf("") }
     var nama by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -59,7 +59,10 @@ fun daftar(onSimpan: () -> Unit) {
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(vertical = 10.dp),
-            onClick = onSimpan
+            onClick = {
+                // Kirim ke detail
+                onSimpan(nim, nama, email, alamat)
+            }
         ) {
             Text("SIMPAN")
         }
@@ -69,5 +72,5 @@ fun daftar(onSimpan: () -> Unit) {
 @Preview
 @Composable
 fun daftarPreview() {
-    daftar({})
+    daftar { _, _, _, _ -> }
 }
