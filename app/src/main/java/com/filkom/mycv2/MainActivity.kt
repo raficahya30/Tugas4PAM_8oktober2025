@@ -49,7 +49,7 @@ fun NavigationApp(modifier: Modifier = Modifier) {
             )
         }
 
-        // ✅ Tambahkan argumen pada route detail
+       
         composable(
             route = "detail/{nim}/{nama}/{email}/{alamat}",
             arguments = listOf(
