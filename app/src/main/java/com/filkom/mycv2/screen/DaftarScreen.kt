@@ -1,12 +1,7 @@
 package com.filkom.mycv2.screen
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,11 +9,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun daftar(onSimpan: (String, String, String, String) -> Unit) {
+fun daftar(onSimpan: (String, String, String, String, String) -> Unit) {
     var nim by remember { mutableStateOf("") }
     var nama by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier
@@ -55,13 +51,19 @@ fun daftar(onSimpan: (String, String, String, String) -> Unit) {
             modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
         )
 
+        OutlinedTextField(
+            value = password,
+            onValueChange = { password = it },
+            label = { Text("Password") },
+            modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
+        )
+
         Button(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(vertical = 10.dp),
             onClick = {
-                // Kirim ke detail
-                onSimpan(nim, nama, email, alamat)
+                onSimpan(nim, nama, email, alamat, password)
             }
         ) {
             Text("SIMPAN")
@@ -72,5 +74,5 @@ fun daftar(onSimpan: (String, String, String, String) -> Unit) {
 @Preview
 @Composable
 fun daftarPreview() {
-    daftar { _, _, _, _ -> }
+    daftar { _, _, _, _, _ -> }
 }
